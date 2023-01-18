@@ -6,3 +6,5 @@ CREATE TABLE `krautundrüben`.`Bestellung` (`BestellNr` INT NOT NULL , `Gesamtpr
 CREATE TABLE `krautundrüben`.`Zutat` (`ZutatNr` INT NOT NULL , `Zutat-Name` TEXT NOT NULL , `Mengeneinheit` TEXT NOT NULL , `Nettopreis` DECIMAL NOT NULL , `Bestand` VARCHAR(5) NOT NULL ) ENGINE = InnoDB;
 CREATE TABLE `krautundrüben`.`Ernährungskategorien` (`KategorieNr` INT NOT NULL , `Bezeichnung` TEXT NOT NULL ) ENGINE = InnoDB;
 CREATE TABLE `krautundrüben`.`Allergene` (`AllergenNr` INT NOT NULL , `Allergen` TEXT NOT NULL ) ENGINE = InnoDB;
+CREATE TABLE `krautundrüben`.`Nährstoffangaben` (`NährstoffNr` INT NOT NULL , `Bezeichnung` TEXT NOT NULL , `Mengenangabe` VARCHAR(5) NOT NULL , `Mengeneinheit` TEXT NOT NULL ) ENGINE = InnoDB;
+CREATE TABLE `krautundrüben`.`Rezept` (`RezeptNr` INT NOT NULL , `Rezept` TEXT NOT NULL , `ZutatNr` INT NOT NULL ) ENGINE = InnoDB;
