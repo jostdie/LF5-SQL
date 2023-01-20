@@ -9,7 +9,7 @@ CREATE TABLE `KrautUndRueben`.`Ort` (`Ort-ID` INT NOT NULL , `Adress-ID` INT NOT
                                          
 CREATE TABLE `KrautUndRueben`.`Lieferant` (`LieferantenNr` INT NOT NULL , `Name` TEXT NOT NULL, PRIMARY KEY (`LieferantenNr`) ) ENGINE = InnoDB;
                                          
-CREATE TABLE `KrautUndRueben`.`Bestellung` (`BestellNr` INT NOT NULL , `Gesamtpreis` DECIMAL(5) NOT NULL , `Datum` DATE NOT NULL, PRIMARY KEY (`BestellNr`) ) ENGINE = InnoDB;
+CREATE TABLE `KrautUndRueben`.`Bestellung` (`BestellNr` INT NOT NULL , `KundenNr`INT NOT NULL , `Gesamtpreis` DECIMAL(5) NOT NULL , `Datum` DATE NOT NULL, PRIMARY KEY (`BestellNr`) ) ENGINE = InnoDB;
                                          
 CREATE TABLE `KrautUndRueben`.`Zutat` (`ZutatNr` INT NOT NULL , `Zutat-Name` TEXT NOT NULL , `Mengeneinheit` TEXT NOT NULL , `Nettopreis` DECIMAL NOT NULL , `Bestand` VARCHAR(5) NOT NULL , `CO2-Emission` DECIMAL(10) NOT NULL , PRIMARY KEY (`ZutatNr`) ) ENGINE = InnoDB;
                                          
