@@ -3,15 +3,15 @@ CREATE DATABASE `KrautUndRueben`;
 
 CREATE TABLE `KrautUndRueben`.`Kunde` (`KundenNr` INT NOT NULL , `Name` TEXT NOT NULL , `Email` TEXT NOT NULL , `Geburtsdatum` DATE NOT NULL , `Telefon` INT NOT NULL, PRIMARY KEY (`KundenNr`) )ENGINE = InnoDB;
                                        
-CREATE TABLE `KrautUndRueben`.`Adresse` (`ID` INT NOT NULL , `KundenNr` INT NULL , `LieferantenNr` INT NULL , `Strasse` TEXT NOT NULL , `Hausnummer` INT NOT NULL, PRIMARY KEY (`ID`) ) ENGINE = InnoDB;
+CREATE TABLE `KrautUndRueben`.`Adresse` (`Adress-ID` INT NOT NULL , `KundenNr` INT NULL , `LieferantenNr` INT NULL , `Strasse` TEXT NOT NULL , `Hausnummer` INT NOT NULL, PRIMARY KEY (`Adress-ID`) ) ENGINE = InnoDB;
                                          
-CREATE TABLE `KrautUndRueben`.`Ort` (`ID` INT NOT NULL , `PLZ` VARCHAR(5) NOT NULL , `Stadt` TEXT NOT NULL, PRIMARY KEY (`ID`) ) ENGINE = InnoDB;
+CREATE TABLE `KrautUndRueben`.`Ort` (`Ort-ID` INT NOT NULL , `Adress-ID` INT NOT NULL ,`PLZ` VARCHAR(5) NOT NULL , `Stadt` TEXT NOT NULL, PRIMARY KEY (`Ort-ID`) ) ENGINE = InnoDB;
                                          
 CREATE TABLE `KrautUndRueben`.`Lieferant` (`LieferantenNr` INT NOT NULL , `Name` TEXT NOT NULL, PRIMARY KEY (`LieferantenNr`) ) ENGINE = InnoDB;
                                          
 CREATE TABLE `KrautUndRueben`.`Bestellung` (`BestellNr` INT NOT NULL , `Gesamtpreis` DECIMAL(5) NOT NULL , `Datum` DATE NOT NULL, PRIMARY KEY (`BestellNr`) ) ENGINE = InnoDB;
                                          
-CREATE TABLE `KrautUndRueben`.`Zutat` (`ZutatNr` INT NOT NULL , `Zutat-Name` TEXT NOT NULL , `Mengeneinheit` TEXT NOT NULL , `Nettopreis` DECIMAL NOT NULL , `Bestand` VARCHAR(5) NOT NULL, `CO2-Emission` DECIMAL(10) , NOT NULL , PRIMARY KEY (`ZutatNr`) ) ENGINE = InnoDB;
+CREATE TABLE `KrautUndRueben`.`Zutat` (`ZutatNr` INT NOT NULL , `Zutat-Name` TEXT NOT NULL , `Mengeneinheit` TEXT NOT NULL , `Nettopreis` DECIMAL NOT NULL , `Bestand` VARCHAR(5) NOT NULL , `CO2-Emission` DECIMAL(10) NOT NULL , PRIMARY KEY (`ZutatNr`) ) ENGINE = InnoDB;
                                          
 CREATE TABLE `KrautUndRueben`.`Ernaehrungskategorien` (`KategorieNr` INT NOT NULL , `Bezeichnung` TEXT NOT NULL, PRIMARY KEY (`KategorieNr`) ) ENGINE = InnoDB;
                                          

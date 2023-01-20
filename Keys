@@ -1,0 +1,7 @@
+ALTER TABLE Adresse ADD FOREIGN KEY (KundenNr) REFERENCES Kunde (KundenNr);
+
+ALTER TABLE Adresse ADD FOREIGN KEY (LieferantenNr) REFERENCES Lieferant (LieferantenNr);
+
+ALTER TABLE Ort ADD FOREIGN KEY (Adress-ID) REFERENCES Adresse (Adress-ID);
+
+ALTER TABLE 
