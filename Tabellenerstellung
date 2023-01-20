@@ -1,3 +1,5 @@
+CREATE DATABASE `KrautUndRueben2`;
+
 CREATE TABLE `KrautUndRueben`.`Kunde` (`KundenNr` INT NOT NULL , `Name` TEXT NOT NULL , `Email` TEXT NOT NULL , `Geburtsdatum` DATE NOT NULL , `Telefon` INT NOT NULL, PRIMARY KEY (`KundenNr`) )ENGINE = InnoDB;
                                        
 CREATE TABLE `KrautUndRueben`.`Adresse` (`ID` INT NOT NULL , `KundenNr` INT NULL , `LieferantenNr` INT NULL , `Strasse` TEXT NOT NULL , `Hausnummer` INT NOT NULL, PRIMARY KEY (`ID`) ) ENGINE = InnoDB;
