@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS `KrautUndRueben`;
 CREATE DATABASE `KrautUndRueben`;
 
 CREATE TABLE `KrautUndRueben`.`Kunde` (`KundenNr` INT NOT NULL , `Name` TEXT NOT NULL , `Email` TEXT NOT NULL , `Geburtsdatum` DATE NOT NULL , `Telefon` INT NOT NULL, PRIMARY KEY (`KundenNr`) )ENGINE = InnoDB;
@@ -6,26 +7,28 @@ CREATE TABLE `KrautUndRueben`.`Adresse` (`ID` INT NOT NULL , `KundenNr` INT NULL
                                          
 CREATE TABLE `KrautUndRueben`.`Ort` (`ID` INT NOT NULL , `PLZ` VARCHAR(5) NOT NULL , `Stadt` TEXT NOT NULL, PRIMARY KEY (`ID`) ) ENGINE = InnoDB;
                                          
-CREATE TABLE `KrautUndRueben`.`Lieferant` (`LieferantenNr` INT NOT NULL , `Name` TEXT NOT NULL, PRIMARY KEY (`LieferantNr`) ) ENGINE = InnoDB;
+CREATE TABLE `KrautUndRueben`.`Lieferant` (`LieferantenNr` INT NOT NULL , `Name` TEXT NOT NULL, PRIMARY KEY (`LieferantenNr`) ) ENGINE = InnoDB;
                                          
 CREATE TABLE `KrautUndRueben`.`Bestellung` (`BestellNr` INT NOT NULL , `Gesamtpreis` DECIMAL(5) NOT NULL , `Datum` DATE NOT NULL, PRIMARY KEY (`BestellNr`) ) ENGINE = InnoDB;
                                          
-CREATE TABLE `KrautUndRueben`.`Zutat` (`ZutatNr` INT NOT NULL , `Zutat-Name` TEXT NOT NULL , `Mengeneinheit` TEXT NOT NULL , `Nettopreis` DECIMAL NOT NULL , `Bestand` VARCHAR(5) NOT NULL, PRIMARY KEY (`ZutatNr) ) ENGINE = InnoDB;
+CREATE TABLE `KrautUndRueben`.`Zutat` (`ZutatNr` INT NOT NULL , `Zutat-Name` TEXT NOT NULL , `Mengeneinheit` TEXT NOT NULL , `Nettopreis` DECIMAL NOT NULL , `Bestand` VARCHAR(5) NOT NULL, PRIMARY KEY (`ZutatNr`) ) ENGINE = InnoDB;
                                          
-CREATE TABLE `KrautUndRueben`.`Ernaehrungskategorien` (`KategorieNr` INT NOT NULL , `Bezeichnung` TEXT NOT NULL, PRIMARY KEY (`KategorieNr) ) ENGINE = InnoDB;
+CREATE TABLE `KrautUndRueben`.`Ernaehrungskategorien` (`KategorieNr` INT NOT NULL , `Bezeichnung` TEXT NOT NULL, PRIMARY KEY (`KategorieNr`) ) ENGINE = InnoDB;
                                          
-CREATE TABLE `KrautUndRueben`.`Allergene` (`AllergenNr` INT NOT NULL , `Allergen` TEXT NOT NULL, PRIMARY KEY (AllergenNr) ) ENGINE = InnoDB;
+CREATE TABLE `KrautUndRueben`.`Allergene` (`AllergenNr` INT NOT NULL , `Allergen` TEXT NOT NULL, PRIMARY KEY (`AllergenNr`) ) ENGINE = InnoDB;
                                          
-CREATE TABLE `KrautUndRueben`.`Naehrstoffangaben` (`NaehrstoffNr` INT NOT NULL , `Bezeichnung` TEXT NOT NULL , `Mengenangabe` VARCHAR(5) NOT NULL , `Mengeneinheit` TEXT NOT NULL, PRIMARY KEY(`NaehrstoffNr`)) ) ENGINE = InnoDB;
+CREATE TABLE `KrautUndRueben`.`Naehrstoffangaben` (`NaehrstoffNr` INT NOT NULL , `Bezeichnung` TEXT NOT NULL , `Mengenangabe` VARCHAR(5) NOT NULL , `Mengeneinheit` TEXT NOT NULL, PRIMARY KEY(`NaehrstoffNr`) ) ENGINE = InnoDB;
                                          
-CREATE TABLE `KrautUndRueben`.`Rezept` (`RezeptNr` INT NOT NULL , `Rezept` TEXT NOT NULL , `ZutatNr` INT NOT NULL, PRIMARY KEY(`RezeptNr) ) ENGINE = InnoDB;
+CREATE TABLE `KrautUndRueben`.`Rezept` (`RezeptNr` INT NOT NULL , `Rezept` TEXT NOT NULL , `ZutatNr` INT NOT NULL, PRIMARY KEY(`RezeptNr`) ) ENGINE = InnoDB;
                                          
 CREATE TABLE `KrautUndRueben`.`Bestellung-Zutat` (`BestellNr` INT NOT NULL , `ZutatNr` INT NOT NULL , `Menge` DECIMAL NOT NULL ) ENGINE = InnoDB;
                                          
-CREATE TABLE `Zutat-Ernaehrungskategorie` (`ZutatNr` int(11) NOT NULL,`KategorieNr` int(11) NOT NULL) ENGINE=InnoDB;
+CREATE TABLE `KrautUndRueben`.`Zutat-Ernaehrungskategorie` (`ZutatNr` int(11) NOT NULL , `KategorieNr` int(11) NOT NULL) ENGINE=InnoDB;
                                          
-CREATE TABLE `Zutat-Lieferant` (`ZutatNr` int(11) NOT NULL `LiefernatNr` int(11) NOT NULL,`Einkaufspreis` decimal(10,0) NOT NULL,`Datum` date NOT NULL) ENGINE=InnoDB;
+CREATE TABLE `KrautUndRueben`.`Zutat-Lieferant` (`ZutatNr` int(11) NOT NULL , `LieferantenNr` int(11) NOT NULL , `Einkaufspreis` decimal(10,0) NOT NULL , `Datum` date NOT NULL) ENGINE=InnoDB;
                                          
-CREATE TABLE `Zutat-Naehrstoffangaben` (`ZutatNr` int(11) NOT NULL,`NaehrstoffNr` int(11) NOT NULL) ENGINE=InnoDB;
+CREATE TABLE `KrautUndRueben`.`Zutat-Naehrstoffangaben` (`ZutatNr` int(11) NOT NULL , `NaehrstoffNr` int(11) NOT NULL) ENGINE=InnoDB;
                                          
-CREATE TABLE `Zutat-Rezept` (`ZutatNr` int(11) NOT NULL,`RezeptNr` int(11) NOT NULL,`Menge` decimal(10,0) NOT NULL) ENGINE=InnoDB;
+CREATE TABLE `KrautUndRueben`.`Zutat-Rezept` (`ZutatNr` int(11) NOT NULL , `RezeptNr` int(11) NOT NULL , `Menge` decimal(10,0) NOT NULL) ENGINE=InnoDB;
+
+CREATE TABLE `Allergene-Zutat` (`ZutatNr` int(11) NOT NULL , `AllergenNr` int(11) NOT NULL) ENGINE=InnoDB;
