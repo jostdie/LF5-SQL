@@ -3,7 +3,7 @@ CREATE DATABASE `KrautUndRueben`;
 
 CREATE TABLE `KrautUndRueben`.`Kunde` (`KundenNr` INT NOT NULL , `Name` TEXT NOT NULL , `Email` TEXT NOT NULL , `Geburtsdatum` DATE NOT NULL , `Telefon` INT NOT NULL, PRIMARY KEY (`KundenNr`) )ENGINE = InnoDB;
                                        
-CREATE TABLE `KrautUndRueben`.`Adresse` (`Adress-ID` INT NOT NULL , `KundenNr` INT NULL , `LieferantenNr` INT NULL , `Strasse` TEXT NOT NULL , `Hausnummer` INT NOT NULL, PRIMARY KEY (`Adress-ID`) ) ENGINE = InnoDB;
+CREATE TABLE `KrautUndRueben`.`Adresse` (`Adress-ID` INT NOT NULL , `LieferantenNr` INT NULL , `Strasse` TEXT NOT NULL , `Hausnummer` INT NOT NULL, PRIMARY KEY (`Adress-ID`) ) ENGINE = InnoDB;
                                          
 CREATE TABLE `KrautUndRueben`.`Ort` (`Ort-ID` INT NOT NULL , `Adress-ID` INT NOT NULL ,`PLZ` VARCHAR(5) NOT NULL , `Stadt` TEXT NOT NULL, PRIMARY KEY (`Ort-ID`) ) ENGINE = InnoDB;
                                          
@@ -19,7 +19,7 @@ CREATE TABLE `KrautUndRueben`.`Allergene` (`AllergenNr` INT NOT NULL , `Allergen
                                          
 CREATE TABLE `KrautUndRueben`.`Naehrstoffangaben` (`NaehrstoffNr` INT NOT NULL , `Bezeichnung` TEXT NOT NULL , `Mengenangabe` VARCHAR(5) NOT NULL , `Mengeneinheit` TEXT NOT NULL, PRIMARY KEY(`NaehrstoffNr`) ) ENGINE = InnoDB;
                                          
-CREATE TABLE `KrautUndRueben`.`Rezept` (`RezeptNr` INT NOT NULL , `Rezept` TEXT NOT NULL , `ZutatNr` INT NOT NULL, `CO2-Emission` DECIMAL(10) , PRIMARY KEY(`RezeptNr`) ) ENGINE = InnoDB;
+CREATE TABLE `KrautUndRueben`.`Rezept` (`RezeptNr` INT NOT NULL , `Rezept` TEXT NOT NULL , `CO2-Emission` DECIMAL(10) , PRIMARY KEY(`RezeptNr`) ) ENGINE = InnoDB;
                                          
 CREATE TABLE `KrautUndRueben`.`Bestellung-Zutat` (`BestellNr` INT NOT NULL , `ZutatNr` INT NOT NULL , `Menge` DECIMAL NOT NULL ) ENGINE = InnoDB;
                                          
