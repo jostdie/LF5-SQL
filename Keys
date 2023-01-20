@@ -2,6 +2,38 @@ ALTER TABLE Adresse ADD FOREIGN KEY (KundenNr) REFERENCES Kunde (KundenNr);
 
 ALTER TABLE Adresse ADD FOREIGN KEY (LieferantenNr) REFERENCES Lieferant (LieferantenNr);
 
-ALTER TABLE Ort ADD FOREIGN KEY (Adress-ID) REFERENCES Adresse (Adress-ID);
+ALTER TABLE Ort ADD FOREIGN KEY (`Adress-ID`) REFERENCES Adresse (`Adress-ID`);
 
-ALTER TABLE 
+ALTER TABLE `Kunde-Adresse` ADD FOREIGN KEY (KundenNr) REFERENCES Kunde (KundenNr);
+
+ALTER TABLE `Kunde-Adresse` ADD FOREIGN KEY (`Adress-ID`) REFERENCES Adresse (`Adress-ID`);
+
+ALTER TABLE Bestellung ADD FOREIGN KEY (KundenNr) REFERENCES Kunde (KundenNr);
+
+ALTER TABLE `Bestellung-Zutat` ADD FOREIGN KEY (BestellNr) REFERENCES Bestellung (BestellNr);
+
+ALTER TABLE `Bestellung-Zutat` ADD FOREIGN KEY (ZutatNr) REFERENCES Zutat (ZutatNr);
+
+ALTER TABLE `Zutat-Ernaehrungskategorie` ADD FOREIGN KEY (ZutatNr) REFERENCES Zutat (ZutatNr);
+ALTER TABLE `Zutat-Ernaehrungskategorie` ADD FOREIGN KEY (KategorieNr) REFERENCES Ernaehrungskategorie (KategorieNr);
+
+ALTER TABLE `Zutat-Allergene` ADD FOREIGN KEY (ZutatNr) REFERENCES Zutat (ZutatNr);
+ALTER TABLE `Zutat-Allergene` ADD FOREIGN KEY (AllergenNr) REFERENCES Allergen (AllergenNr);
+
+ALTER TABLE `Zutat-Naehrstoffangaben` ADD FOREIGN KEY (ZutatNr) REFERENCES Zutat (ZutatNr);
+ALTER TABLE `Zutat-Naehrstoffangaben` ADD FOREIGN KEY (NaehrstoffNr) REFERENCES Naehrstoffangaben (NaehrstoffNr);
+
+ALTER TABLE Rezept ADD FOREIGN KEY (ZutatNr) REFERENCES Zutat (ZutatNr);
+
+ALTER TABLE `Zutat-Rezept` ADD FOREIGN KEY (ZutatNr) REFERENCES Zutat (ZutatNr);
+ALTER TABLE `Zutat-Rezept` ADD FOREIGN KEY (RezeptNr) REFERENCES Rezept (RezeptNr);
+
+ALTER TABLE `Zutat-Lieferant` ADD FOREIGN KEY (ZutatNr) REFERENCES Zutat (ZutatNr);
+ALTER TABLE `Zutat-Lieferant` ADD FOREIGN KEY (LieferantenNr) REFERENCES Lieferant (LieferantenNr);
+
+
+
+
+
+
+

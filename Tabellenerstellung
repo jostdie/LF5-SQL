@@ -31,4 +31,6 @@ CREATE TABLE `KrautUndRueben`.`Zutat-Naehrstoffangaben` (`ZutatNr` int(11) NOT N
                                          
 CREATE TABLE `KrautUndRueben`.`Zutat-Rezept` (`ZutatNr` int(11) NOT NULL , `RezeptNr` int(11) NOT NULL , `Menge` decimal(10,0) NOT NULL) ENGINE=InnoDB;
 
-CREATE TABLE `KrautUndRueben`.`Allergene-Zutat` (`ZutatNr` int(11) NOT NULL , `AllergenNr` int(11) NOT NULL) ENGINE=InnoDB;
+CREATE TABLE `KrautUndRueben`.`Zutat-Allergene` (`ZutatNr` int(11) NOT NULL , `AllergenNr` int(11) NOT NULL) ENGINE=InnoDB;
+
+CREATE TABLE `KrautUndRueben`.`Kunde-Adresse` (`KundenNr`int(11) NOT NULL , `Adress-ID` int (11) NOT NULL) ENGINE=InnoDB;
