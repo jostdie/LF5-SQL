@@ -24,3 +24,6 @@ ALTER TABLE `Zutat-Rezept` ADD FOREIGN KEY (RezeptNr) REFERENCES Rezept (RezeptN
 
 ALTER TABLE `Zutat-Lieferant` ADD FOREIGN KEY (ZutatNr) REFERENCES Zutat (ZutatNr);
 ALTER TABLE `Zutat-Lieferant` ADD FOREIGN KEY (LieferantenNr) REFERENCES Lieferant (LieferantenNr);
+
+
+moin
