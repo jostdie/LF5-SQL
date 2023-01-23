@@ -3,9 +3,9 @@ CREATE DATABASE `KrautUndRueben`;
 
 CREATE TABLE `KrautUndRueben`.`Kunde` (`KundenNr` INT NOT NULL , `Name` TEXT NOT NULL , `Email` TEXT NOT NULL , `Geburtsdatum` DATE NOT NULL , `Telefon` INT NOT NULL, PRIMARY KEY (`KundenNr`) )ENGINE = InnoDB;
                                        
-CREATE TABLE `KrautUndRueben`.`Adresse` (`Adress-ID` INT NOT NULL , `LieferantenNr` INT NULL , `Strasse` TEXT NOT NULL , `Hausnummer` INT NOT NULL, PRIMARY KEY (`Adress-ID`) ) ENGINE = InnoDB;
+CREATE TABLE `KrautUndRueben`.`Adresse` (`Adress-ID` INT NOT NULL AUTO_INCREMENT , `LieferantenNr` INT NULL , `Strasse` TEXT NOT NULL , `Hausnummer` INT NOT NULL, PRIMARY KEY (`Adress-ID`) ) ENGINE = InnoDB;
                                          
-CREATE TABLE `KrautUndRueben`.`Ort` (`Ort-ID` INT NOT NULL , `Adress-ID` INT NOT NULL ,`PLZ` VARCHAR(5) NOT NULL , `Stadt` TEXT NOT NULL, PRIMARY KEY (`Ort-ID`) ) ENGINE = InnoDB;
+CREATE TABLE `KrautUndRueben`.`Ort` (`Ort-ID` INT NOT NULL AUTO_INCREMENT , `Adress-ID` INT NOT NULL ,`PLZ` VARCHAR(5) NOT NULL , `Stadt` TEXT NOT NULL, PRIMARY KEY (`Ort-ID`) ) ENGINE = InnoDB;
                                          
 CREATE TABLE `KrautUndRueben`.`Lieferant` (`LieferantenNr` INT NOT NULL , `Name` TEXT NOT NULL, PRIMARY KEY (`LieferantenNr`) ) ENGINE = InnoDB;
                                          
