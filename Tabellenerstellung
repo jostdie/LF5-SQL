@@ -1,7 +1,7 @@
 DROP DATABASE IF EXISTS `KrautUndRueben`;
 CREATE DATABASE `KrautUndRueben`;
 
-CREATE TABLE `KrautUndRueben`.`Kunde` (`KundenNr` INT NOT NULL , `Name` TEXT NOT NULL , `Email` TEXT NOT NULL , `Geburtsdatum` DATE NOT NULL , `Telefon` INT NOT NULL, PRIMARY KEY (`KundenNr`) )ENGINE = InnoDB;
+CREATE TABLE `KrautUndRueben`.`Kunde` (`KundenNr` INT NOT NULL , `Name` TEXT NOT NULL , `Email` TEXT NOT NULL , `Geburtsdatum` DATE NOT NULL , `Telefon` VARCHAR(20) NOT NULL, PRIMARY KEY (`KundenNr`) )ENGINE = InnoDB;
                                        
 CREATE TABLE `KrautUndRueben`.`Adresse` (`Adress-ID` INT NOT NULL AUTO_INCREMENT , `LieferantenNr` INT NULL , `Strasse` TEXT NOT NULL , `Hausnummer` INT NOT NULL, PRIMARY KEY (`Adress-ID`) ) ENGINE = InnoDB;
                                          
