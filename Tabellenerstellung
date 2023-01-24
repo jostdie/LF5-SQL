@@ -1,13 +1,13 @@
 DROP DATABASE IF EXISTS `KrautUndRueben`;
 CREATE DATABASE `KrautUndRueben`;
 
-CREATE TABLE `KrautUndRueben`.`Kunde` (`KundenNr` INT NOT NULL , `Name` TEXT NOT NULL , `Email` TEXT NOT NULL , `Geburtsdatum` DATE NOT NULL , `Telefon` VARCHAR(20) NOT NULL, PRIMARY KEY (`KundenNr`) )ENGINE = InnoDB;
+CREATE TABLE `KrautUndRueben`.`Kunde` (`KundenNr` INT NOT NULL , `Name` TEXT NOT NULL , `Email` TEXT NOT NULL , `Geburtsdatum` DATE NOT NULL , `Telefon` VARCHAR(20) NOT NULL , PRIMARY KEY (`KundenNr`) )ENGINE = InnoDB;
                                        
 CREATE TABLE `KrautUndRueben`.`Adresse` (`Adress-ID` INT NOT NULL AUTO_INCREMENT , `LieferantenNr` INT NULL , `Strasse` TEXT NOT NULL , `Hausnummer` VARCHAR(9) NOT NULL, PRIMARY KEY (`Adress-ID`) ) ENGINE = InnoDB;
                                          
 CREATE TABLE `KrautUndRueben`.`Ort` (`Ort-ID` INT NOT NULL AUTO_INCREMENT , `Adress-ID` INT NOT NULL ,`PLZ` VARCHAR(5) NOT NULL , `Stadt` TEXT NOT NULL, PRIMARY KEY (`Ort-ID`) ) ENGINE = InnoDB;
                                          
-CREATE TABLE `KrautUndRueben`.`Lieferant` (`LieferantenNr` INT NOT NULL , `Name` TEXT NOT NULL, PRIMARY KEY (`LieferantenNr`) ) ENGINE = InnoDB;
+CREATE TABLE `KrautUndRueben`.`Lieferant` (`LieferantenNr` INT NOT NULL , `Name` TEXT NOT NULL , `Telefon` VARCHAR(20) NOT NULL , `Email`TEXT NOT NULL , PRIMARY KEY (`LieferantenNr`) ) ENGINE = InnoDB;
                                          
 CREATE TABLE `KrautUndRueben`.`Bestellung` (`BestellNr` INT NOT NULL , `KundenNr`INT NOT NULL , `Gesamtpreis` DECIMAL(5) NOT NULL , `Datum` DATE NOT NULL, PRIMARY KEY (`BestellNr`) ) ENGINE = InnoDB;
                                          
