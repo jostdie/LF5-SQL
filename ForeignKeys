@@ -17,7 +17,7 @@ ALTER TABLE `Zutat-Allergene` ADD FOREIGN KEY (ZutatNr) REFERENCES Zutat (ZutatN
 ALTER TABLE `Zutat-Allergene` ADD FOREIGN KEY (AllergenNr) REFERENCES Allergene (AllergenNr);
 
 ALTER TABLE `Zutat-Naehrstoffangaben` ADD FOREIGN KEY (ZutatNr) REFERENCES Zutat (ZutatNr);
-ALTER TABLE `Zutat-Naehrstoffangaben` ADD FOREIGN KEY (NaehrstoffNr) REFERENCES Naehrstoffangaben (NaehrstoffNr);
+ALTER TABLE `Zutat-Naehrstoffangaben` ADD FOREIGN KEY (`Naehrstoff-ID`) REFERENCES Naehrstoffangaben (`Naehrstoff-ID`);
 
 ALTER TABLE `Zutat-Rezept` ADD FOREIGN KEY (ZutatNr) REFERENCES Zutat (ZutatNr);
 ALTER TABLE `Zutat-Rezept` ADD FOREIGN KEY (RezeptNr) REFERENCES Rezept (RezeptNr);
