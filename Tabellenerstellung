@@ -1,9 +1,22 @@
 DROP DATABASE IF EXISTS `KrautUndRueben`;
 CREATE DATABASE `KrautUndRueben`;
 
-CREATE TABLE `KrautUndRueben`.`Kunde` (`KundenNr` INT NOT NULL , `Name` TEXT NOT NULL , `Email` TEXT NOT NULL , `Geburtsdatum` DATE NOT NULL , `Telefon` VARCHAR(20) NOT NULL , PRIMARY KEY (`KundenNr`) )ENGINE = InnoDB;
+CREATE TABLE `KrautUndRueben`.`Kunde` (
+    `KundenNr` INT NOT NULL , 
+    `Name` TEXT NOT NULL , 
+    `Email` TEXT NOT NULL , 
+    `Geburtsdatum` DATE NOT NULL ,
+    `Telefon` VARCHAR(20) NOT NULL , 
+    PRIMARY KEY (`KundenNr`) 
+) ENGINE = InnoDB;
                                        
-CREATE TABLE `KrautUndRueben`.`Adresse` (`Adress-ID` INT NOT NULL AUTO_INCREMENT , `LieferantenNr` INT NULL , `Strasse` TEXT NOT NULL , `Hausnummer` VARCHAR(9) NOT NULL, PRIMARY KEY (`Adress-ID`) ) ENGINE = InnoDB;
+CREATE TABLE `KrautUndRueben`.`Adresse` (
+    `Adress-ID` INT NOT NULL AUTO_INCREMENT, 
+    `LieferantenNr` INT NULL, 
+    `Strasse` TEXT NOT NULL, 
+    `Hausnummer` VARCHAR(9) NOT NULL, 
+    PRIMARY KEY (`Adress-ID`) 
+) ENGINE = InnoDB;
                                          
 CREATE TABLE `KrautUndRueben`.`Ort` (`Ort-ID` INT NOT NULL AUTO_INCREMENT , `Adress-ID` INT NOT NULL ,`PLZ` VARCHAR(5) NOT NULL , `Stadt` TEXT NOT NULL, PRIMARY KEY (`Ort-ID`) ) ENGINE = InnoDB;
                                          
@@ -17,7 +30,19 @@ CREATE TABLE `KrautUndRueben`.`Ernaehrungskategorien` (`KategorieNr` INT NOT NUL
                                          
 CREATE TABLE `KrautUndRueben`.`Allergene` (`AllergenNr` INT NOT NULL , `Allergen` TEXT NOT NULL, PRIMARY KEY (`AllergenNr`) ) ENGINE = InnoDB;
                                          
-CREATE TABLE `KrautUndRueben`.`Naehrstoffangaben` (`NaehrstoffNr` INT NOT NULL , `Naehrstoffangaben` TEXT DEFAULT 'pro 100g' , `Kalorien` VARCHAR(20) NOT NULL , `Protein` DECIMAL(4,2) NOT NULL, `Kohlenhydrate` DECIMAL(4,2) NOT NULL, `- davon Zucker` DECIMAL(4,2) NOT NULL, `Fett`DECIMAL(4,2) NOT NULL, `- davon gesättigte Fettsäuren` DECIMAL(4,2) NOT NULL, `Ballaststoffe` DECIMAL(4,2) NOT NULL, `Natrium` DECIMAL(4,2) NOT NULL,  PRIMARY KEY(`NaehrstoffNr`) ) ENGINE = InnoDB;
+CREATE TABLE `KrautUndRueben`.`Naehrstoffangaben` (
+    `NaehrstoffNr` INT NOT NULL, 
+    `Naehrstoffangaben` TEXT DEFAULT 'pro 100g', 
+    `Kalorien` VARCHAR(20) NOT NULL,
+    `Protein` DECIMAL(4,2) NOT NULL, 
+    `Kohlenhydrate` DECIMAL(4,2) NOT NULL,
+    `- davon Zucker` DECIMAL(4,2) NOT NULL, 
+    `Fett`DECIMAL(4,2) NOT NULL, 
+    `- davon gesättigte Fettsäuren` DECIMAL(4,2) NOT NULL, 
+    `Ballaststoffe` DECIMAL(4,2) NOT NULL,
+    `Natrium` DECIMAL(4,2) NOT NULL, 
+    PRIMARY KEY(`NaehrstoffNr`) 
+) ENGINE = InnoDB;
                                          
 CREATE TABLE `KrautUndRueben`.`Rezept` (`RezeptNr` INT NOT NULL , `Rezept` TEXT NOT NULL , `CO2-Emission` DECIMAL(10) , PRIMARY KEY(`RezeptNr`) ) ENGINE = InnoDB;
                                          
