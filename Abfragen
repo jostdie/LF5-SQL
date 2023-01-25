@@ -1,1 +1,3 @@
 SELECT concat(Kalorien, 'g') FROM `Naehrstoffangaben` WHERE 1;
+
+SELECT ZUTATNR, BEZEICHNUNG, `Nettopreis (EUR)`, ROUND(`Nettopreis (EUR)` * 1.19, 2) AS "Bruttopreis (EUR)", BESTAND, MENGENEINHEIT, `CO2-EMISSION` FROM Zutat;

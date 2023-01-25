@@ -18,13 +18,40 @@ CREATE TABLE `KrautUndRueben`.`Adresse` (
     PRIMARY KEY (`Adress-ID`) 
 ) ENGINE = InnoDB;
                                          
-CREATE TABLE `KrautUndRueben`.`Ort` (`Ort-ID` INT NOT NULL AUTO_INCREMENT , `Adress-ID` INT NOT NULL ,`PLZ` VARCHAR(5) NOT NULL , `Stadt` TEXT NOT NULL, PRIMARY KEY (`Ort-ID`) ) ENGINE = InnoDB;
+CREATE TABLE `KrautUndRueben`.`Ort` (
+    `Ort-ID` INT NOT NULL AUTO_INCREMENT,
+    `Adress-ID` INT NOT NULL, 
+    `PLZ` VARCHAR(5) NOT NULL, 
+    `Stadt` TEXT NOT NULL, 
+    PRIMARY KEY (`Ort-ID`) 
+) ENGINE = InnoDB;
                                          
-CREATE TABLE `KrautUndRueben`.`Lieferant` (`LieferantenNr` INT NOT NULL , `Name` TEXT NOT NULL , `Telefon` VARCHAR(20) NOT NULL , `Email`TEXT NOT NULL , PRIMARY KEY (`LieferantenNr`) ) ENGINE = InnoDB;
+CREATE TABLE `KrautUndRueben`.`Lieferant` (
+    `LieferantenNr` INT NOT NULL ,
+    `Name` TEXT NOT NULL ,
+    `Telefon` VARCHAR(20) NOT NULL ,
+    `Email`TEXT NOT NULL , 
+    PRIMARY KEY (`LieferantenNr`) 
+) ENGINE = InnoDB;
                                          
-CREATE TABLE `KrautUndRueben`.`Bestellung` (`BestellNr` INT NOT NULL , `KundenNr`INT NOT NULL , `Bestelldatum` DATE NOT NULL , `Rechnungsbetrag` DECIMAL(5,2) NOT NULL , WAEHRUNG VARCHAR(3) DEFAULT 'EUR' , PRIMARY KEY (`BestellNr`) ) ENGINE = InnoDB;
+CREATE TABLE `KrautUndRueben`.`Bestellung` (
+    `BestellNr` INT NOT NULL ,
+    `KundenNr`INT NOT NULL , 
+    `Bestelldatum` DATE NOT NULL ,
+    `Rechnungsbetrag` DECIMAL(5,2) NOT NULL ,
+    WAEHRUNG VARCHAR(3) DEFAULT 'EUR' , 
+    PRIMARY KEY (`BestellNr`) 
+) ENGINE = InnoDB;
                                          
-CREATE TABLE `KrautUndRueben`.`Zutat` (`ZutatNr` INT NOT NULL , `BEZEICHNUNG` TEXT NOT NULL , `Mengeneinheit` TEXT NOT NULL , `Nettopreis` DECIMAL NOT NULL , `Bruttopreis` DECIMAL NOT NULL , `Bestand` VARCHAR(5) NOT NULL , `CO2-Emission` DECIMAL(10) NOT NULL , PRIMARY KEY (`ZutatNr`) ) ENGINE = InnoDB;
+CREATE TABLE `KrautUndRueben`.`Zutat` (
+    `ZutatNr` INT NOT NULL , 
+    `BEZEICHNUNG` TEXT NOT NULL , 
+    `Nettopreis (EUR)` DECIMAL(5,2) NOT NULL , 
+    `Bestand` VARCHAR(5) NOT NULL ,
+    `Mengeneinheit` TEXT NOT NULL ,
+    `CO2-Emission` DECIMAL(5,3) NOT NULL , 
+    PRIMARY KEY (`ZutatNr`) 
+) ENGINE = InnoDB;
                                          
 CREATE TABLE `KrautUndRueben`.`Ernaehrungskategorien` (`KategorieNr` INT NOT NULL , `Bezeichnung` TEXT NOT NULL, PRIMARY KEY (`KategorieNr`) ) ENGINE = InnoDB;
                                          
