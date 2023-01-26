@@ -112,7 +112,8 @@ CREATE TABLE `KrautUndRueben`.`Zutat-Naehrstoffangaben` (
 CREATE TABLE `KrautUndRueben`.`Zutat-Rezept` (
     `ZutatNr` int(11) NOT NULL , 
     `RezeptNr` int(11) NOT NULL ,
-    `Menge` decimal(10,2) NOT NULL
+    `Menge` decimal(10,2) NOT NULL,
+    `Mengeneiheit` text NOT NULL
 ) ENGINE=InnoDB;
 
 CREATE TABLE `KrautUndRueben`.`Zutat-Allergene` (
