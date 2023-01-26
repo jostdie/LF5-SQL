@@ -39,7 +39,7 @@ CREATE TABLE `KrautUndRueben`.`Bestellung` (
     `KundenNr`INT NOT NULL , 
     `Bestelldatum` DATE NOT NULL ,
     `Rechnungsbetrag` DECIMAL(5,2) NOT NULL ,
-    WAEHRUNG VARCHAR(3) DEFAULT 'EUR' , 
+    `Waehrung` VARCHAR(3) DEFAULT 'EUR' , 
     PRIMARY KEY (`BestellNr`) 
 ) ENGINE = InnoDB;
                                          
