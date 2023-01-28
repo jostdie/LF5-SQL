@@ -3,3 +3,7 @@ SELECT concat(Kalorien, 'g') FROM `Naehrstoffangaben` WHERE 1;
 SELECT ZUTATNR, BEZEICHNUNG, `Nettopreis (EUR)`, ROUND(`Nettopreis (EUR)` * 1.19, 2) AS "Bruttopreis (EUR)", BESTAND, MENGENEINHEIT, `CO2-EMISSION` FROM Zutat;
 
 SELECT Bezeichnung, `Nettopreis (EUR)`, ROUND(`Nettopreis (EUR)` * 1.19, 2) AS "Bruttopreis (EUR)", Bestand, Mengeneinheit, `CO2-Emission` FROM `Zutat`;
+
+
+SELECT Zutat.Bezeichnung FROM Rezept JOIN `Zutat-Rezept` ON Rezept.RezeptNr = `Zutat-Rezept`.RezeptNr JOIN Zutat ON `Zutat-Rezept`.ZutatNr = Zutat.ZutatNr WHERE Rezept.RezeptNr = 3;
+SELECT Zutat.Bezeichnung FROM Rezept JOIN `Zutat-Rezept` ON Rezept.RezeptNr = `Zutat-Rezept`.`RezeptNr` JOIN Zutat ON `Zutat-Rezept`.ZutatNr = Zutat.ZutatNr WHERE Rezept.Rezept = 'Frutarische Burger';
