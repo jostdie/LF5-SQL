@@ -85,6 +85,12 @@ CREATE TABLE `KrautUndRueben`.`Rezept` (
     `CO2-Emission` DECIMAL(10),
     PRIMARY KEY(`RezeptNr`) 
 ) ENGINE = InnoDB;
+
+CREATE TABLE `KrautUndRueben`.`Mengeneinheit`(
+    `EinheitNr` INT NOT NULL,
+    `Mengeneinheit` TEXT NOT NULL,
+    PRIMARY KEY(`EinheitNr`)
+) ENGINE = InnoDB;
                                          
 CREATE TABLE `KrautUndRueben`.`Bestellung-Zutat` (
     `BestellNr` INT NOT NULL ,
@@ -93,35 +99,35 @@ CREATE TABLE `KrautUndRueben`.`Bestellung-Zutat` (
 ) ENGINE = InnoDB;
                                          
 CREATE TABLE `KrautUndRueben`.`Zutat-Ernaehrungskategorie` (
-    `ZutatNr` int(11) NOT NULL , 
-    `KategorieNr` int(11) NOT NULL
+    `ZutatNr` INT NOT NULL , 
+    `KategorieNr` INT NOT NULL
 ) ENGINE=InnoDB;
                                          
 CREATE TABLE `KrautUndRueben`.`Zutat-Lieferant` (
-    `ZutatNr` int(11) NOT NULL ,
-    `LieferantenNr` int(11) NOT NULL , 
+    `ZutatNr` INT NOT NULL ,
+    `LieferantenNr` INT NOT NULL , 
     `Einkaufspreis (EUR)` decimal(10,2) NOT NULL , 
     `Datum` date NOT NULL
 ) ENGINE=InnoDB;
                                          
 CREATE TABLE `KrautUndRueben`.`Zutat-Naehrstoffangaben` (
-    `ZutatNr` int(11) NOT NULL ,
-    `Naehrstoff-ID` int(11) NOT NULL
+    `ZutatNr` INT NOT NULL ,
+    `Naehrstoff-ID` INT NOT NULL
 ) ENGINE=InnoDB;
                                          
 CREATE TABLE `KrautUndRueben`.`Zutat-Rezept` (
-    `ZutatNr` int(11) NOT NULL , 
-    `RezeptNr` int(11) NOT NULL ,
+    `ZutatNr` INT NOT NULL , 
+    `RezeptNr` INT NOT NULL ,
     `Menge` decimal(10,2) NOT NULL,
-    `Mengeneiheit` text NOT NULL
+    `Mengeneinheit` INT NOT NULL
 ) ENGINE=InnoDB;
 
 CREATE TABLE `KrautUndRueben`.`Zutat-Allergene` (
-    `ZutatNr` int(11) NOT NULL ,
-    `AllergenNr` int(11) NOT NULL
+    `ZutatNr` INT NOT NULL ,
+    `AllergenNr` INT NOT NULL
 ) ENGINE=InnoDB;
 
 CREATE TABLE `KrautUndRueben`.`Kunde-Adresse` (
-    `KundenNr`int(11) NOT NULL, 
+    `KundenNr`INT NOT NULL, 
     `Adress-ID` int (11) NOT NULL
 ) ENGINE=InnoDB;
