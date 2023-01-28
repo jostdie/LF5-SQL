@@ -119,7 +119,7 @@ CREATE TABLE `KrautUndRueben`.`Zutat-Rezept` (
     `ZutatNr` INT NOT NULL , 
     `RezeptNr` INT NOT NULL ,
     `Menge` decimal(10,2) NOT NULL,
-    `Mengeneinheit` INT NOT NULL
+    `Mengeneinheit` INT
 ) ENGINE=InnoDB;
 
 CREATE TABLE `KrautUndRueben`.`Zutat-Allergene` (
