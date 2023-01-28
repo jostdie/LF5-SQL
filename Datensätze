@@ -188,7 +188,204 @@ INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5011, 01
 INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5011, 02);
 INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5011, 03);
 
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5012, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5012, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5012, 03);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5012, 04);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5012, 05);
 
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5013, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5013, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5013, 03);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5014, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5014, 03);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5014, 05);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5015, 05);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5016, 02);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5017, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5017, 03);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5017, 05);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5018, 05);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5019, 05);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5020, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5020, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5020, 05);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5021, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5021, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5021, 04);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5022, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5022, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5022, 05);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5023, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5023, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5023, 03);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5023, 05);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5024, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5024, 05);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5025, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5025, 05);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5026, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5026, 05);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5027, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5027, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5027, 03);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5027, 05);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5028, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5028, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5028, 03);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5029, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5029, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5029, 03);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5029, 05); 
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5030, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5030, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5030, 03);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5030, 04);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5031, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5031, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5031, 03);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5031, 04);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5032, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5032, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5032, 03);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5032, 04);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5033, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5033, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5033, 03);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5034, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5034, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5034, 03);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5034, 05);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5035, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5035, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5035, 05);
+
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5036, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5036, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5036, 05);
+
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5037, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5037, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5037, 03);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5038, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5038, 03);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5038, 04);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5038, 05);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5039, 03);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5039, 05);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5040, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5040, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5040, 05);
+
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5041, 05);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5042, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5042, 02);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5043, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5043, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5043, 05);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5044, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5044, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5044, 03);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5045, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5045, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5045, 05);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5046, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5046, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5046, 05);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5047, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5047, 02);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5048, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5048, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5048, 05);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5049, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5049, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5049, 05);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5050, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5050, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5050, 03);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5051, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5051, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5051, 03);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5052, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5052, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5052, 05);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5053, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5053, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5053, 04);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5054, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5054, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5054, 03);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5054, 04);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5055, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5055, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5055, 05);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5056, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5056, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5056, 03);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5056, 04);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5057, 05);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5058, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5058, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5058, 05);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5059, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5059, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5059, 04);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5059, 05);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5060, 05);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5061, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5061, 02);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5061, 05);
+
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5062, 01);
+INSERT INTO `Zutat-Ernaehrungskategorie` (ZUTATNR, KATEGORIENR) VALUES (5062, 02);
 
 ------------------------------------------------------------------------------------------------------------------------
 
