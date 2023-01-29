@@ -67,6 +67,8 @@ CREATE TABLE `KrautUndRueben`.`Allergene` (
                                          
 CREATE TABLE `KrautUndRueben`.`Naehrstoffangaben` (
     `Naehrstoff-ID` INT NOT NULL AUTO_INCREMENT, 
+    `ZutatNr` INT,
+    `RezeptNr` INT,
     `Naehrstoffangaben` TEXT DEFAULT 'pro 100g', 
     `Kalorien` VARCHAR(20) NOT NULL,
     `Protein` DECIMAL(4,2) NOT NULL, 
@@ -82,20 +84,15 @@ CREATE TABLE `KrautUndRueben`.`Naehrstoffangaben` (
 CREATE TABLE `KrautUndRueben`.`Rezept` (
     `RezeptNr` INT NOT NULL,
     `Rezept` TEXT NOT NULL, 
-    `CO2-Emission` DECIMAL(5.3),
+    `CO2-Emission` DECIMAL(5,3),
     PRIMARY KEY(`RezeptNr`) 
-) ENGINE = InnoDB;
-
-CREATE TABLE `KrautUndRueben`.`Mengeneinheit`(
-    `EinheitNr` INT NOT NULL,
-    `Mengeneinheit` TEXT NOT NULL,
-    PRIMARY KEY(`EinheitNr`)
 ) ENGINE = InnoDB;
                                          
 CREATE TABLE `KrautUndRueben`.`Bestellung-Zutat` (
     `BestellNr` INT NOT NULL ,
     `ZutatNr` INT NOT NULL , 
-    `Menge` DECIMAL NOT NULL 
+    `Menge` DECIMAL(5,2) NOT NULL,
+    `Mengenangabe` TEXT NOT NULL,
 ) ENGINE = InnoDB;
                                          
 CREATE TABLE `KrautUndRueben`.`Zutat-Ernaehrungskategorie` (
