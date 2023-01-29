@@ -82,7 +82,7 @@ CREATE TABLE `KrautUndRueben`.`Naehrstoffangaben` (
 CREATE TABLE `KrautUndRueben`.`Rezept` (
     `RezeptNr` INT NOT NULL,
     `Rezept` TEXT NOT NULL, 
-    `CO2-Emission` DECIMAL(10),
+    `CO2-Emission` DECIMAL(5.3),
     PRIMARY KEY(`RezeptNr`) 
 ) ENGINE = InnoDB;
 
