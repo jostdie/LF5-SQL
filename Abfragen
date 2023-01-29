@@ -9,15 +9,46 @@ SELECT Zutat.Bezeichnung FROM Rezept JOIN `Zutat-Rezept` ON Rezept.RezeptNr = `Z
 SELECT Zutat.Bezeichnung FROM Rezept JOIN `Zutat-Rezept` ON Rezept.RezeptNr = `Zutat-Rezept`.`RezeptNr` JOIN Zutat ON `Zutat-Rezept`.ZutatNr = Zutat.ZutatNr WHERE Rezept.Rezept = 'Frutarische Burger';
 
 
-SELECT Rezept FROM Ernaehrungskategorien JOIN `Zutat-Ernaehrungskategorien` ON Ernaehrungskategorien.KategorieNr = `Zutat-Ernaehrungskategorien`.`KategorieNr` JOIN Rezept ON `Zutat-Ernaehrungskategorien`.ZutatNr = Zutat.ZutatNr WHERE Rezept.Rezept = 'Frutarische Burger';
 
 
-SELECT DISTINCT Rezept.RezeptNr, Rezept.Rezept 
-FROM Rezept 
-JOIN `Zutat-Rezept` ON Rezept.RezeptNr = `Zutat-Rezept`.RezeptNr 
-JOIN Zutat ON `Zutat-Rezept`.ZutatNr = Zutat.ZutatNr 
-JOIN `Zutat-Ernaehrungskategorie` ON Zutat.ZutatNr = `Zutat-Ernaehrungskategorie`.ZutatNr 
+SELECT Rezept 
+FROM Ernaehrungskategorien 
+JOIN `Zutat-Ernaehrungskategorie`n` ON Ernaehrungskategorien.KategorieNr = `Zutat-Ernaehrungskategorie`n`.`KategorieNr` 
+JOIN Rezept ON `Zutat-Ernaehrungskategorie`n`.ZutatNr = Zutat.ZutatNr 
+WHERE Rezept.Rezept = 'Frutarische Burger';
+
+
+SELECT Rezept.RezeptNr, Rezept.Rezept
+FROM Rezept
+WHERE Rezept.RezeptNr NOT IN (
+SELECT DISTINCT `Zutat-Rezept`.RezeptNr
+FROM `Zutat-Rezept`
+JOIN `Zutat-Ernaehrungskategorie` ON `Zutat-Rezept`.ZutatNr = `Zutat-Ernaehrungskategorie`.ZutatNr
 JOIN Ernaehrungskategorien ON `Zutat-Ernaehrungskategorie`.KategorieNr = Ernaehrungskategorien.KategorieNr
-WHERE Ernaehrungskategorien.Bezeichnung = 'Vegetarisch';
+WHERE Ernaehrungskategorien.Bezeichnung = 'Vegan');
 
 
+SELECT DISTINCT Rezept.RezeptNr, Rezept.Rezept
+FROM Rezept
+JOIN `Zutat-Rezept` ON Rezept.RezeptNr = `Zutat-Rezept`.RezeptNr
+JOIN Zutat ON `Zutat-Rezept`.ZutatNr = Zutat.ZutatNr
+WHERE Zutat.Bezeichnung = 'Zwiebel';
+
+
+SELECT * FROM Zutat 
+WHERE ZutatNr NOT IN ( 
+    SELECT ZutatNr 
+    FROM `Zutat-Rezept` 
+);
+
+
+SELECT Rezept.RezeptNr, Rezept.Rezept
+FROM Rezept
+JOIN Naehrstoffangaben ON Rezept.RezeptNr = Naehrstoffangaben.RezeptNr
+WHERE Naehrstoffangaben.Kalorien <= 300;
+
+
+SELECT Rezept.RezeptNr, Rezept.Rezept
+FROM Rezept
+JOIN `Zutat-Rezept` ON Rezept.RezeptNr = `Zutat-Rezept`.RezeptNr
+WHERE 
