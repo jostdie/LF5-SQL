@@ -7,3 +7,17 @@ SELECT Bezeichnung, `Nettopreis (EUR)`, ROUND(`Nettopreis (EUR)` * 1.19, 2) AS "
 
 SELECT Zutat.Bezeichnung FROM Rezept JOIN `Zutat-Rezept` ON Rezept.RezeptNr = `Zutat-Rezept`.RezeptNr JOIN Zutat ON `Zutat-Rezept`.ZutatNr = Zutat.ZutatNr WHERE Rezept.RezeptNr = 3;
 SELECT Zutat.Bezeichnung FROM Rezept JOIN `Zutat-Rezept` ON Rezept.RezeptNr = `Zutat-Rezept`.`RezeptNr` JOIN Zutat ON `Zutat-Rezept`.ZutatNr = Zutat.ZutatNr WHERE Rezept.Rezept = 'Frutarische Burger';
+
+
+SELECT Rezept FROM Ernaehrungskategorien JOIN `Zutat-Ernaehrungskategorien` ON Ernaehrungskategorien.KategorieNr = `Zutat-Ernaehrungskategorien`.`KategorieNr` JOIN Rezept ON `Zutat-Ernaehrungskategorien`.ZutatNr = Zutat.ZutatNr WHERE Rezept.Rezept = 'Frutarische Burger';
+
+
+SELECT DISTINCT Rezept.RezeptNr, Rezept.Rezept 
+FROM Rezept 
+JOIN `Zutat-Rezept` ON Rezept.RezeptNr = `Zutat-Rezept`.RezeptNr 
+JOIN Zutat ON `Zutat-Rezept`.ZutatNr = Zutat.ZutatNr 
+JOIN `Zutat-Ernaehrungskategorie` ON Zutat.ZutatNr = `Zutat-Ernaehrungskategorie`.ZutatNr 
+JOIN Ernaehrungskategorien ON `Zutat-Ernaehrungskategorie`.KategorieNr = Ernaehrungskategorien.KategorieNr
+WHERE Ernaehrungskategorien.Bezeichnung = 'Vegetarisch';
+
+
