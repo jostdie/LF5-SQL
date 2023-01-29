@@ -46,7 +46,8 @@ CREATE TABLE `KrautUndRueben`.`Bestellung` (
 CREATE TABLE `KrautUndRueben`.`Zutat` (
     `ZutatNr` INT NOT NULL , 
     `Bezeichnung` TEXT NOT NULL , 
-    `Nettopreis (EUR)` DECIMAL(5,2) NOT NULL , 
+    `Nettopreis (EUR)` DECIMAL(5,2) NOT NULL ,
+    `Bruttopreis (EUR)` DECIMAL(5,2) NOT NULL ,
     `Bestand` VARCHAR(5) NOT NULL ,
     `Mengeneinheit` TEXT NOT NULL ,
     `CO2-Emission` DECIMAL(5,3) NOT NULL COMMENT 'pro 100g' , 
@@ -92,7 +93,7 @@ CREATE TABLE `KrautUndRueben`.`Bestellung-Zutat` (
     `BestellNr` INT NOT NULL ,
     `ZutatNr` INT NOT NULL , 
     `Menge` DECIMAL(5,2) NOT NULL,
-    `Mengenangabe` TEXT NOT NULL,
+    `Mengenangabe` TEXT NOT NULL
 ) ENGINE = InnoDB;
                                          
 CREATE TABLE `KrautUndRueben`.`Zutat-Ernaehrungskategorie` (
@@ -116,7 +117,7 @@ CREATE TABLE `KrautUndRueben`.`Zutat-Rezept` (
     `ZutatNr` INT NOT NULL , 
     `RezeptNr` INT NOT NULL ,
     `Menge` decimal(10,2) NOT NULL,
-    `Mengeneinheit` INT,
+    `Mengeneinheit` TEXT NOT NULL,
     `Hinweis` TEXT
 ) ENGINE=InnoDB;
 
