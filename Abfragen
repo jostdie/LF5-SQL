@@ -6,18 +6,16 @@ SELECT Bezeichnung, `Nettopreis (EUR)`, ROUND(`Nettopreis (EUR)` * 1.19, 2) AS "
 
 
 SELECT Zutat.Bezeichnung FROM Rezept JOIN `Zutat-Rezept` ON Rezept.RezeptNr = `Zutat-Rezept`.RezeptNr JOIN Zutat ON `Zutat-Rezept`.ZutatNr = Zutat.ZutatNr WHERE Rezept.RezeptNr = 3;
-SELECT Zutat.Bezeichnung FROM Rezept JOIN `Zutat-Rezept` ON Rezept.RezeptNr = `Zutat-Rezept`.`RezeptNr` JOIN Zutat ON `Zutat-Rezept`.ZutatNr = Zutat.ZutatNr WHERE Rezept.Rezept = 'Frutarische Burger';
 
 
-
-
-SELECT Rezept 
-FROM Ernaehrungskategorien 
-JOIN `Zutat-Ernaehrungskategorie`n` ON Ernaehrungskategorien.KategorieNr = `Zutat-Ernaehrungskategorie`n`.`KategorieNr` 
-JOIN Rezept ON `Zutat-Ernaehrungskategorie`n`.ZutatNr = Zutat.ZutatNr 
+#Auswahl aller Zutaten eines Rezeptes nach Rezeptname
+SELECT Zutat.Bezeichnung 
+FROM Rezept 
+JOIN `Zutat-Rezept` ON Rezept.RezeptNr = `Zutat-Rezept`.`RezeptNr` 
+JOIN Zutat ON `Zutat-Rezept`.ZutatNr = Zutat.ZutatNr 
 WHERE Rezept.Rezept = 'Frutarische Burger';
 
-
+#Auswahl aller Rezepte einer bestimmten Ernährungskategorie
 SELECT Rezept.RezeptNr, Rezept.Rezept
 FROM Rezept
 WHERE Rezept.RezeptNr NOT IN (
@@ -27,28 +25,113 @@ JOIN `Zutat-Ernaehrungskategorie` ON `Zutat-Rezept`.ZutatNr = `Zutat-Ernaehrungs
 JOIN Ernaehrungskategorien ON `Zutat-Ernaehrungskategorie`.KategorieNr = Ernaehrungskategorien.KategorieNr
 WHERE Ernaehrungskategorien.Bezeichnung = 'Vegan');
 
-
+#Auswahl aller Rezepte, die eine gewisse Zutat enthalten
 SELECT DISTINCT Rezept.RezeptNr, Rezept.Rezept
 FROM Rezept
 JOIN `Zutat-Rezept` ON Rezept.RezeptNr = `Zutat-Rezept`.RezeptNr
 JOIN Zutat ON `Zutat-Rezept`.ZutatNr = Zutat.ZutatNr
 WHERE Zutat.Bezeichnung = 'Zwiebel';
 
-
+#Auswahl aller Zutaten, die bisher keinem Rezept zugeordnet sind
 SELECT * FROM Zutat 
 WHERE ZutatNr NOT IN ( 
     SELECT ZutatNr 
-    FROM `Zutat-Rezept` 
-);
+    FROM `Zutat-Rezept`);
 
 
-SELECT Rezept.RezeptNr, Rezept.Rezept
+#Auswahl aller Rezepte, die eine bestimmte Kalorienmenge nicht überschreiten
+SELECT Rezept.RezeptNr, Rezept.Rezept, Naehrstoffangaben.Kalorien
 FROM Rezept
 JOIN Naehrstoffangaben ON Rezept.RezeptNr = Naehrstoffangaben.RezeptNr
 WHERE Naehrstoffangaben.Kalorien <= 300;
 
 
+#Auswahl aller Rezepte, die weniger als fünf Zutaten enthalten
 SELECT Rezept.RezeptNr, Rezept.Rezept
 FROM Rezept
+JOIN (
+  SELECT RezeptNr, COUNT(*) as Zutaten_count
+  FROM `Zutat-Rezept`
+  GROUP BY RezeptNr
+) as Rezept_Zutaten_count
+ON Rezept.RezeptNr = Rezept_Zutaten_count.RezeptNr
+WHERE Rezept_Zutaten_count.Zutaten_count < 5;
+
+
+#Auswahl aller Rezepte, die weniger als fünf Zutaten enthalten und 0 eine bestimmte Ernährungskategorie erfüllen
+SELECT Rezept.RezeptNr, Rezept.Rezept
+FROM Rezept
+JOIN (
+  SELECT RezeptNr, COUNT(ZutatNr) AS Zutaten_count
+  FROM `Zutat-Rezept`
+  GROUP BY RezeptNr
+) AS Zutaten_pro_Rezept ON Rezept.RezeptNr = Zutaten_pro_Rezept.RezeptNr
 JOIN `Zutat-Rezept` ON Rezept.RezeptNr = `Zutat-Rezept`.RezeptNr
-WHERE 
+JOIN `Zutat-Ernaehrungskategorie` ON `Zutat-Rezept`.ZutatNr = `Zutat-Ernaehrungskategorie`.ZutatNr
+JOIN Ernaehrungskategorien ON `Zutat-Ernaehrungskategorie`.KategorieNr = Ernaehrungskategorien.KategorieNr
+WHERE Zutaten_pro_Rezept.Zutaten_count < 5 AND Ernaehrungskategorien.Bezeichnung = 'Vegan'
+GROUP BY Rezept.RezeptNr;
+
+
+#Rezepte mit besonders wenig Emoission
+SELECT * FROM Rezept WHERE `CO2-Emission` < 0.5;
+
+#1. weiteres Statement - Zutaten ohne Allergene
+SELECT Zutat.*
+FROM Zutat
+LEFT JOIN `Zutat-Allergene` ON Zutat.ZutatNr = `Zutat-Allergene`.ZutatNr
+WHERE `Zutat-Allergene`.ZutatNr IS NULL;
+
+#2. weiteres Statement - Bestellungen mit Kundennamen
+SELECT Kunde.Name, Bestellung.*
+FROM Kunde
+JOIN Bestellung ON Kunde.KundenNr = Bestellung.KundenNr
+
+#3. weiteres Statement - Kunde mit kompletter Anschrift
+SELECT Kunde.Name, Kunde.Email, Kunde.Geburtsdatum, Kunde.Telefon, Adresse.Strasse, Adresse.Hausnummer, Ort.PLZ, Ort.Stadt
+FROM Kunde
+JOIN `Kunde-Adresse` ON Kunde.KundenNr = `Kunde-Adresse`.KundenNr
+JOIN Adresse ON `Kunde-Adresse`.`Adress-ID` = Adresse.`Adress-ID`
+JOIN Ort ON Adresse.`Ort-ID` = Ort.`Ort-ID`
+
+
+
+#DSGVO Auskunft
+SELECT Kunde.*, Adresse.*, Ort.*, Bestellung.*, `Bestellung-Zutat`.*
+FROM Kunde
+JOIN `Kunde-Adresse` ON Kunde.KundenNr = `Kunde-Adresse`.KundenNr
+JOIN Adresse ON `Kunde-Adresse`.`Adress-ID` = Adresse.`Adress-ID`
+JOIN Ort ON `Adresse`.`Ort-ID` = `Ort`.`Ort-ID`
+JOIN Bestellung ON Kunde.KundenNr = Bestellung.KundenNr
+JOIN `Bestellung-Zutat` ON Bestellung.BestellNr = `Bestellung-Zutat`.BestellNr
+WHERE Kunde.KundenNr = 2009;
+
+
+#DSGVO Kundenlöschung 
+USE KrautUndRueben;
+
+UPDATE Kunde as k
+SET
+	k.Name             = "Deleted user",
+    k.EMAIL            = NULL,
+    k.GEBURTSDATUM     = NULL,
+    k.TELEFON          = NULL
+
+WHERE k.KundenNr=2001;
+
+UPDATE Adresse as a 
+SET 
+	a.STRASSE 			= NULL,
+    a.HAUSNUMMER    	= NULL
+    
+WHERE a.`Adress-ID` = 1;
+
+
+
+
+
+
+
+
+
+
