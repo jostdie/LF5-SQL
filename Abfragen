@@ -15,15 +15,15 @@ JOIN `Zutat-Rezept` ON Rezept.RezeptNr = `Zutat-Rezept`.`RezeptNr`
 JOIN Zutat ON `Zutat-Rezept`.ZutatNr = Zutat.ZutatNr 
 WHERE Rezept.Rezept = 'Frutarische Burger';
 
-#Auswahl aller Rezepte einer bestimmten Ernährungskategorie
+#Auswahl aller Rezepte einer bestimmten Ernährungskategorie *
 SELECT Rezept.RezeptNr, Rezept.Rezept
 FROM Rezept
-WHERE Rezept.RezeptNr NOT IN (
+WHERE Rezept.RezeptNr IN (
 SELECT DISTINCT `Zutat-Rezept`.RezeptNr
 FROM `Zutat-Rezept`
 JOIN `Zutat-Ernaehrungskategorie` ON `Zutat-Rezept`.ZutatNr = `Zutat-Ernaehrungskategorie`.ZutatNr
 JOIN Ernaehrungskategorien ON `Zutat-Ernaehrungskategorie`.KategorieNr = Ernaehrungskategorien.KategorieNr
-WHERE Ernaehrungskategorien.Bezeichnung = 'Vegan');
+WHERE Ernaehrungskategorien.Bezeichnung = 'Low Carb');
 
 #Auswahl aller Rezepte, die eine gewisse Zutat enthalten
 SELECT DISTINCT Rezept.RezeptNr, Rezept.Rezept
@@ -39,7 +39,7 @@ WHERE ZutatNr NOT IN (
     FROM `Zutat-Rezept`);
 
 
-#Auswahl aller Rezepte, die eine bestimmte Kalorienmenge nicht überschreiten
+#Auswahl aller Rezepte, die eine bestimmte Kalorienmenge nicht überschreiten *
 SELECT Rezept.RezeptNr, Rezept.Rezept, Naehrstoffangaben.Kalorien
 FROM Rezept
 JOIN Naehrstoffangaben ON Rezept.RezeptNr = Naehrstoffangaben.RezeptNr
@@ -73,7 +73,7 @@ WHERE Zutaten_pro_Rezept.Zutaten_count < 5 AND Ernaehrungskategorien.Bezeichnung
 GROUP BY Rezept.RezeptNr;
 
 
-#Rezepte mit besonders wenig Emoission
+#Rezepte mit besonders wenig Emoission *
 SELECT * FROM Rezept WHERE `CO2-Emission` < 0.5;
 
 #1. weiteres Statement - Zutaten ohne Allergene
@@ -87,7 +87,7 @@ SELECT Kunde.Name, Bestellung.*
 FROM Kunde
 JOIN Bestellung ON Kunde.KundenNr = Bestellung.KundenNr
 
-#3. weiteres Statement - Kunde mit kompletter Anschrift
+#3. weiteres Statement - Kunde mit kompletter Anschrift *
 SELECT Kunde.Name, Kunde.Email, Kunde.Geburtsdatum, Kunde.Telefon, Adresse.Strasse, Adresse.Hausnummer, Ort.PLZ, Ort.Stadt
 FROM Kunde
 JOIN `Kunde-Adresse` ON Kunde.KundenNr = `Kunde-Adresse`.KundenNr
@@ -96,7 +96,7 @@ JOIN Ort ON Adresse.`Ort-ID` = Ort.`Ort-ID`
 
 
 
-#DSGVO Auskunft
+#DSGVO Auskunft *
 SELECT Kunde.*, Adresse.*, Ort.*, Bestellung.*, `Bestellung-Zutat`.*
 FROM Kunde
 JOIN `Kunde-Adresse` ON Kunde.KundenNr = `Kunde-Adresse`.KundenNr
