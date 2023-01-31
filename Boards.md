@@ -1,4 +1,4 @@
-# LF5-SQL
+# Lernfeld 5 - SQL
 
 Trello-Board (Scrum): https://trello.com/invite/b/LONxz70k/ATTI7c7617e532b870eee866e4ae6d822b0fD1098778/lernfeld-5-datenbank-fur-kochbox
 
